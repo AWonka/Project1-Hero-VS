@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+    <title>Super Hero Battle Royale</title>
+</head>
+<body>
+    <div class="row no-gutters"> <!--Need to find Foundation equivalent to no-gutters to get rid of spacing in between -->
+        <div class="col-md-6 no-gutters">
+            <div class="leftCol d-flex justify-content-center align-items-center"></div>
+            <!--Everything within the left column will go here-->
+                <h1 class="title">Team Marvel</h1>
+                <div class="card">
+                    <h3 class="card-header text-uppercse">Choose Your Hero</h3>
+                    <select name="hero-name" id="hero-name">
+                        <option value="" disabled selected>Select Hero</option>
+                        <option value="#1">Iron Man</option>
+                        <option value="#2">Black Panther</option>
+                    </select>
+                </div>
+                <div class="marvImg"></div> <!--display is initially hidden, will shown through js-->
+                <div class="marvMovie"></div>
+                <div class="marvQuote"></div>
+        </div>
+        <div class="col-md-6 no-gutters">
+            <div class="rightCol d-flex justify-content-center align-items-center"></div>
+            <h1 class="title">Team  DC</h1>
+            <div class="card">
+                <h3 class="card-header text-uppercse">Choose Your Hero</h3>
+                <select name="hero-name" id="hero-name">
+                    <option value="" disabled selected>Select Hero</option>
+                    <option value="#1">Superman</option>
+                    <option value="#2">Batman</option>
+                </select>
+            </div>
+            <div class="dcImg"></div> <!--display is initially hidden, will shown through js-->
+            <div class="dcMovie"></div>
+            <div class="dcQuote"></div>
+            <!--For style sheet
+            .leftCol, .rightCol{
+                height:50vh;
+                width:100%;
+            }
+
+            @media screen and (min-width:768px){
+                .leftCol, .rightCol{
+                    height:100vh;
+                }
+            }
+            .leftCol {
+                background: red;
+            }
+            .rightCol {
+                background: blue;
+            }-->
+        </div>    
+    </div>
+    
+</body>
+</html>
