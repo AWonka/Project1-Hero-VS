@@ -16,7 +16,7 @@
                 <h1 class="title">Team Marvel</h1>
                 <div class="card">
                     <h3 class="card-header text-uppercse">Choose Your Hero</h3>
-                    <select name="hero-name" id="hero-name">
+                    <select name="hero-name" id="marvel-name">
                         <option value="" disabled selected>Select Hero</option>
                         <option value="#1">Captain America</option>
                         <option value="#2">Iron Man</option>
@@ -32,6 +32,14 @@
                 </div>
             </div>
                 <div class="marvImg"></div> <!--display is initially hidden, will shown through js-->
+                <!-- test -->
+                <div class="card marvCard" id="marvCardId">
+                    <div class="card-divider" id="marvCharTitle">
+                        <!-- append character name and then append image to char name -->
+                        <div class="card-section" id="marvStats"></div>
+                    </div>
+                </div>
+                <!-- end test -->
                 <div class="marvMovie"></div>
                 <div class="marvQuote"></div>
         </div>
@@ -41,7 +49,7 @@
             <h1 class="title">Team  DC</h1>
             <div class="card">
                 <h3 class="card-header text-uppercse">Choose Your Hero</h3>
-                <select name="hero-name" id="hero-name">
+                <select name="hero-name" id="dc-name">
                     <option value="" disabled selected>Select Hero</option>
                     <option value="#1">Batman</option>
                     <option value="#2">Superman</option>
@@ -56,10 +64,19 @@
                 </select>
             </div>
             </div>
-        </div>
+        
             <div class="dcImg"></div> <!--display is initially hidden, will shown through js-->
+            <!-- test -->
+            <div class="card dcCard" id="dcCardId">
+                <div class="card-divider" id="dcCharTitle">
+                    <!-- append character name and then append image to char name -->
+                    <div class="card-section" id="dcStats"></div>
+                </div>
+            </div>
+            <!-- end test -->
             <div class="dcMovie"></div>
             <div class="dcQuote"></div>
+        </div>
             <!--For style sheet
             .leftCol, .rightCol{
                 height:50vh;
@@ -79,6 +96,9 @@
             }-->
 
     </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/script.js"></script>
     
 </body>
 </html>
