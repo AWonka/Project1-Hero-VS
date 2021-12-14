@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/foundation.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/foundation.min.css">
     <title>Super Hero Battle Royale</title>
 </head>
 <body>
@@ -13,10 +13,10 @@
         <div class="columns small-6">
             <div class="align-center-middle text-center">
             <!--Everything within the left column will go here-->
-                <h1 class="title">Team Marvel</h1>
+                <h1 class="teamTitle">Team Marvel</h1>
                 <div class="card">
                     <h3 class="card-header text-uppercse">Choose Your Hero</h3>
-                    <select name="hero-name" id="marvel-name">
+                    <select name="hero-name" id="marvelName">
                         <option value="" disabled selected>Select Hero</option>
                         <option value="149">Captain America</option>
                         <option value="346">Iron Man</option>
@@ -31,75 +31,53 @@
                     </select>
                 </div>
             </div>
-                <div class="marvImg"></div> <!--display is initially hidden, will shown through js-->
-                <!-- test -->
-                <div class="card marvCard" id="marvCardId">
-                    <div class="card-divider" id="marvCharTitle">
-                        <!-- append character name and then append image to char name -->
-                        <div class="card-section" id="marvStats"></div>
-                    </div>
-                </div>
-                <!-- end test -->
-                <div class="marvMovie"></div>
-                <div class="marvQuote"></div>
+            <div class="marvLogo"></div> <!--display is initially hidden, will shown through js-->
+            <!-- test -->
+            <div class="card marvCard" id="marvCardId">
+                <div class="card-divider" id="marvCharTitle"></div>
+                <div class="card-section" id="marvStats"></div>
+            </div>
+            <!-- end test -->
+            <div class="marvMovie" id="marvMovieDiv">
+                <select id="marvArray"></select>
+            </div>
+            <div class="marvQuote"></div>
         </div>
-    
         <div class="columns small-6">
             <div class="align-center-middle text-center">
-            <h1 class="title">Team  DC</h1>
+            <h1 class="teamTitle">Team  DC</h1>
             <div class="card">
                 <h3 class="card-header text-uppercse">Choose Your Hero</h3>
-                <select name="hero-name" id="dc-name">
+                <select name="hero-name" id="dcName">
                     <option value="" disabled selected>Select Hero</option>
-                    <option value="1">Batman</option>
-                    <option value="2">Superman</option>
-                    <option value="3">Green Lantern</option>
-                    <option value="4">Wonder Woman</option>
-                    <option value="5">Cyborg</option>
-                    <option value="6">Joker</option>
-                    <option value="7">Harley Quinn</option>
-                    <option value="8">John Constantine</option>
-                    <option value="9">CatWoman</option>
-                    <option value="10">Aquaman</option>
+                    <option value="69">Batman</option>
+                    <option value="644">Superman</option>
+                    <option value="306">Green Lantern</option>
+                    <option value="720">Wonder Woman</option>
+                    <option value="194">Cyborg</option>
+                    <option value="370">Joker</option>
+                    <option value="309">Harley Quinn</option>
+                    <option value="367">John Constantine</option>
+                    <option value="165">CatWoman</option>
+                    <option value="38">Aquaman</option>
                 </select>
             </div>
             </div>
-        
-            <div class="dcImg"></div> <!--display is initially hidden, will shown through js-->
+            <div class="dcLogo"></div> <!--display is initially hidden, will shown through js-->
             <!-- test -->
             <div class="card dcCard" id="dcCardId">
-                <div class="card-divider" id="dcCharTitle">
-                    <!-- append character name and then append image to char name -->
-                    <div class="card-section" id="dcStats"></div>
-                </div>
+                <div class="card-divider" id="dcCharTitle"></div>    
+                <div class="card-section" id="dcStats"></div>
             </div>
             <!-- end test -->
-            <div class="dcMovie"></div>
+            <div class="dcMovie" id = "dcMovieDiv">
+                <select id = "dcArray"></select>
+            </div>
             <div class="dcQuote"></div>
             </div>
-            <!--For style sheet
-            .leftCol, .rightCol{
-                height:50vh;
-                width:100%;
-            }
-
-            @media screen and (min-width:768px){
-                .leftCol, .rightCol{
-                    height:100vh;
-                }
-            }
-            .leftCol {
-                background: red;
-            }
-            .rightCol {
-                background: blue;
-            }-->
-
     </div>
-
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src ="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-    
+    <script src="assets/script.js"></script>
 </body>
 </html>
