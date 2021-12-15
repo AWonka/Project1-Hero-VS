@@ -17,6 +17,8 @@ var teamDC = document.querySelector('#dcTeamNames');
 var parsed = "";
 const superAPIKey = '10215957904298742';
 const imdbAPIKey = 'k_rl11t9z7';
+var newKey = 'k_rjtma7sz/'
+
 $(marvelName).change(function() {
     let position = this.value;
     let idURL = 'https://www.superheroapi.com/api.php/10215957904298742/' + position;
@@ -219,7 +221,7 @@ $(dcName).change(function() {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
         select.innerHTML = '';
-        let elmts = ["Superman The Movie (1978)", "Superman II(1980)", "Superman III(1983)", "Superman IV: The Quest for Peace", "Superman Returns", "Man of Steel", "Batman V Superman: Dawn of Justice", "Justice League"];
+        let elmts = ["Superman The Movie", "Superman II", "Superman III", "Superman IV: The Quest for Peace", "Superman Returns", "Man of Steel", "Batman V Superman: Dawn of Justice", "Justice League"];
         for (var i = 0; i < elmts.length; i++) {
         let optn = elmts[i];
         let el = document.createElement('option');
@@ -253,7 +255,7 @@ $(dcName).change(function() {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
         select.innerHTML = '';
-        let elmts = ["Wonder Woman (2017)", "Wonder Woman 1984", "Justice League"];
+        let elmts = ["Wonder Woman", "Wonder Woman 1984", "Justice League"];
         for (var i = 0; i < elmts.length; i++) {
         let optn = elmts[i];
         let el = document.createElement('option');
@@ -287,7 +289,7 @@ $(dcName).change(function() {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
         select.innerHTML = '';
-        let elmts = ["Joker (2019)", "Suicide Squad (2016)", "Batman (1989)"];
+        let elmts = ["Joker", "Suicide Squad", "Batman"];
         for (var i = 0; i < elmts.length; i++) {
         let optn = elmts[i];
         let el = document.createElement('option');
@@ -304,7 +306,7 @@ $(dcName).change(function() {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
         select.innerHTML = '';
-        let elmts = ["Birds of Prey", "Suicide Squad (2016)", "The Suicide Squad"];
+        let elmts = ["Birds of Prey", "Suicide Squad", "The Suicide Squad"];
         for (var i = 0; i < elmts.length; i++) {
         let optn = elmts[i];
         let el = document.createElement('option');
@@ -321,7 +323,7 @@ $(dcName).change(function() {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
         select.innerHTML = '';
-        let elmts = ["Constantine (2005)"];
+        let elmts = ["Constantine"];
         for (var i = 0; i < elmts.length; i++) {
         let optn = elmts[i];
         let el = document.createElement('option');
@@ -338,7 +340,7 @@ $(dcName).change(function() {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
         select.innerHTML = '';
-        let elmts = ["CatWoman (2004)", "The Dark Knight Rises"];
+        let elmts = ["CatWoman", "The Dark Knight Rises"];
         for (var i = 0; i < elmts.length; i++) {
         let optn = elmts[i];
         let el = document.createElement('option');
@@ -392,6 +394,7 @@ function getMarvelAPI(link) {
         var mStats = document.createElement("h4")
         var mIntell = document.createElement("p")
         var mStrength = document.createElement("p")
+        var mSpeed = document.createElement("p")
         var mDur = document.createElement("p")
         var mPower = document.createElement("p")
         var mCombat = document.createElement("p")
@@ -403,6 +406,7 @@ function getMarvelAPI(link) {
         mStats.textContent = "Stats: ";
         mIntell.textContent = 'Intelligence: ' + data.powerstats.intelligence;
         mStrength.textContent = 'Strength: ' + data.powerstats.strength;
+        mSpeed.textContent = 'Speed: ' + data.powerstats.speed;
         mDur.textContent = 'Durability: ' + data.powerstats.durability;
         mPower.textContent = 'Power: ' + data.powerstats.power;
         mCombat.textContent = 'Combat: ' + data.powerstats.combat;
@@ -412,18 +416,19 @@ function getMarvelAPI(link) {
        mdivEl.appendChild(mStats);
        mdivEl.appendChild(mIntell);
        mdivEl.appendChild(mStrength);
+       mdivEl.appendChild(mSpeed);
        mdivEl.appendChild(mDur);
        mdivEl.appendChild(mPower);
        mdivEl.appendChild(mCombat);
        marvStats.appendChild(mdivEl);
        
        var mstatTot = Object.values(data.powerstats)
-       var sum = 0;
+       var mSum = 0;
        for( var i = 0; i < mstatTot.length; i++ ){
-           sum += parseInt( mstatTot[i], 10 );
+           mSum += parseInt( mstatTot[i], 10 );
        }
-       var avg = sum/mstatTot.length;
-       console.log( "The sum of all the elements is: " + sum + " The average is: " + avg );
+       var mAvg = mSum/mstatTot.length;
+       console.log( "The sum of all the elements is: " + mSum + " The average is: " + mAvg );
 
 
        var allSelectedChars = [];
@@ -442,7 +447,7 @@ function getMarvelAPI(link) {
        if (allSelectedStats.length === 3) {
            allSelectedStats.shift();
        }
-       allSelectedStats.push(avg);
+       allSelectedStats.push(mAvg);
        localStorage.setItem('marvSelectedStats', JSON.stringify(allSelectedStats));
        for (var x = 0; x < allSelectedChars.length; x++) {
            var nameDisplay = allSelectedChars[x];
@@ -472,6 +477,7 @@ function getDCAPI(link) {
         var dStats = document.createElement("h4")
         var dcIntell = document.createElement("p")
         var dcStrength = document.createElement("p")
+        var dcSpeed = document.createElement("p")
         var dcDur = document.createElement("p")
         var dcPower = document.createElement("p")
         var dcCombat = document.createElement("p")
@@ -483,6 +489,7 @@ function getDCAPI(link) {
         dStats.textContent = "Stats: ";
         dcIntell.textContent = 'Intelligence: ' + data.powerstats.intelligence;
         dcStrength.textContent = 'Strength: ' + data.powerstats.strength;
+        dcSpeed.textContent = 'Speed: ' + data.powerstats.speed;
         dcDur.textContent = 'Durability: ' + data.powerstats.durability;
         dcPower.textContent = 'Power: ' + data.powerstats.power;
         dcCombat.textContent = 'Combat: ' + data.powerstats.combat;
@@ -492,19 +499,20 @@ function getDCAPI(link) {
         dcDivEl.appendChild(dStats);
         dcDivEl.appendChild(dcIntell);
         dcDivEl.appendChild(dcStrength);
+        dcDivEl.appendChild(dcSpeed);
         dcDivEl.appendChild(dcDur);
         dcDivEl.appendChild(dcPower);
         dcDivEl.appendChild(dcCombat);
         dcStats.appendChild(dcDivEl);
 
         var dstatTot = Object.values(data.powerstats)
-        var sum = 0;
+        var dcSum = 0;
         for( var i = 0; i < dstatTot.length; i++ ){
-            sum += parseInt( dstatTot[i], 10 );
+            dcSum += parseInt( dstatTot[i], 10 );
         }
     
-        var avg = sum/dstatTot.length;
-        console.log( "The sum of all the elements is: " + sum + " The average is: " + avg );
+        var dcAvg = dcSum/dstatTot.length;
+        console.log( "The sum of all the elements is: " + dcSum + " The average is: " + dcAvg );
 
         var allSelectedChars = [];
        if (localStorage.getItem('dcSelectedChars')){
@@ -522,7 +530,7 @@ function getDCAPI(link) {
        if (allSelectedStats.length === 3) {
            allSelectedStats.shift();
        }
-       allSelectedStats.push(avg);
+       allSelectedStats.push(dcAvg);
        localStorage.setItem('dcSelectedStats', JSON.stringify(allSelectedStats));
        for (var x = 0; x < allSelectedChars.length; x++) {
            var nameDisplay = allSelectedChars[x];
@@ -541,7 +549,7 @@ function getDCAPI(link) {
 
 //Getting movie ratings
 function getMRatingAPI(marvMovie) {
-    fetch('https://imdb-api.com/en/API/SearchMovie/k_8h1t7ggm/' + marvMovie)
+    fetch('https://imdb-api.com/en/API/SearchMovie/'+ newKey + marvMovie)
     .then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
@@ -549,13 +557,26 @@ function getMRatingAPI(marvMovie) {
                 var idName = pull1.id;
                 console.log(idName);
                 
-                fetch('https://imdb-api.com/en/API/Ratings/k_8h1t7ggm/' + idName)
+                fetch('https://imdb-api.com/en/API/Ratings/'+ newKey + idName)
                 .then(function (response) {
-                    console.log(response)
                     if (response.ok) {
                         response.json().then(function (data) {
-                            var pull2 = data.rottenTomatoes;
-                            console.log(pull2);
+                            if (data.rottenTomatoes) {
+                                var mrating = data.rottenTomatoes
+                            }else {
+                                var mrating = data.metacritic
+                            }
+                            console.log(mrating);
+
+                            var mRateArray = [];
+                            if (localStorage.getItem('marvSelectedRatings')) {
+                             mRateArray = JSON.parse(localStorage.getItem('marvSelectedRatings'))
+                            }  
+                            if (mRateArray.length === 3) {
+                                mRateArray.pop();
+                            }
+                            mRateArray.push(mrating)
+                            localStorage.setItem("marvSelectedRatings", JSON.stringify(mRateArray));
                         })
                     }
                 })
@@ -565,7 +586,7 @@ function getMRatingAPI(marvMovie) {
 }
 
 function getDCRatingAPI(dcMovie) {
-    fetch('https://imdb-api.com/en/API/SearchMovie/k_8h1t7ggm/' + dcMovie)
+    fetch('https://imdb-api.com/en/API/SearchMovie/'+ newKey + dcMovie)
     .then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
@@ -573,13 +594,26 @@ function getDCRatingAPI(dcMovie) {
                 var dcidName = dcpull1.id;
                 console.log(dcidName);
                 
-                fetch('https://imdb-api.com/en/API/Ratings/k_8h1t7ggm/' + dcidName)
+                fetch('https://imdb-api.com/en/API/Ratings/'+ newKey + dcidName)
                 .then(function (response) {
-                    console.log(response)
                     if (response.ok) {
                         response.json().then(function (data) {
-                            var dcpull2 = data.rottenTomatoes;
-                            console.log(dcpull2);
+                            if (data.rottenTomatoes) {
+                                var dcrating = data.rottenTomatoes
+                            }else {
+                                var dcrating = data.metacritic
+                            }
+                            console.log(dcrating);
+
+                            var dcRateArray = [];
+                            if (localStorage.getItem('dcelectedRatings')) {
+                             dcRateArray = JSON.parse(localStorage.getItem('dcSelectedRatings'))
+                            }  
+                            if (dcRateArray.length === 3) {
+                                dcRateArray.pop();
+                            }
+                            dcRateArray.push(dcrating)
+                            localStorage.setItem("dcSelectedRatings", JSON.stringify(dcRateArray));
                         })
                     }
                 })
