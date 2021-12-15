@@ -3,12 +3,16 @@ var marvelName = document.querySelector('#marvelName');
 var marvCard = document.querySelector('#marvCardId');
 var marvCharTitle = document.querySelector('#marvCharTitle');
 var marvStats = document.querySelector('#marvStats');
+var movieChoice = document.querySelector('#marvArray');
+var teamMarvel = document.querySelector('#mTeamNames');
 
 // dc const
 var dcName = document.querySelector('#dcName');
 var dcCard = document.querySelector('#dcCardId');
 var dcCharTitle = document.querySelector('#dcCharTitle');
 var dcStats = document.querySelector('#dcStats');
+var dcmovieChoice = document.querySelector('#dcArray');
+var teamDC = document.querySelector('#dcTeamNames');
 
 var parsed = "";
 const superAPIKey = '10215957904298742';
@@ -28,8 +32,13 @@ $(marvelName).change(function() {
             el.textContent = optn;
             el.value = optn;
             select.appendChild(el);
-            console.log(el.value);
+            
         }
+            //replaces globally
+            let result = elmts[0].replace(/ /g, "%20");
+            console.log(result);
+            getMRatingAPI(result);
+
         } else if (this.value == 346) {
             // clearMarvMovie();
             let select = document.getElementById('marvArray');
@@ -43,6 +52,10 @@ $(marvelName).change(function() {
             select.appendChild(el);
             console.log(el.value);
         }
+            let result = elmts[0].replace(/ /g, "%20");
+            console.log(result);
+            getMRatingAPI(result);
+        
         } else if (this.value == 620) {
             let select = document.getElementById('marvArray');
             select.innerHTML = '';
@@ -55,6 +68,10 @@ $(marvelName).change(function() {
             select.appendChild(el);
             console.log(el.value);
         }
+            let result = elmts[0].replace(/ /g, "%20");
+            console.log(result);
+            getMRatingAPI(result);
+
         } else if (this.value == 226) {
             let select = document.getElementById('marvArray');
             select.innerHTML = '';
@@ -67,6 +84,10 @@ $(marvelName).change(function() {
             select.appendChild(el);
             console.log(el.value);
         }
+            let result = elmts[0].replace(/ /g, "%20");
+            console.log(result);
+            getMRatingAPI(result);
+
         } else if (this.value == 30) {
             let select = document.getElementById('marvArray');
             select.innerHTML = '';
@@ -79,6 +100,10 @@ $(marvelName).change(function() {
             select.appendChild(el);
             console.log(el.value);
         }
+            let result = elmts[0].replace(/ /g, "%20");
+            console.log(result);
+            getMRatingAPI(result);
+
         } else if (this.value == 106) {
             let select = document.getElementById('marvArray');
             select.innerHTML = '';
@@ -91,6 +116,10 @@ $(marvelName).change(function() {
             select.appendChild(el);
             console.log(el.value);
         }
+            let result = elmts[0].replace(/ /g, "%20");
+            console.log(result);
+            getMRatingAPI(result);
+
         } else if (this.value == 659) {
             let select = document.getElementById('marvArray');
             select.innerHTML = '';
@@ -103,6 +132,11 @@ $(marvelName).change(function() {
             select.appendChild(el);
             console.log(el.value);
         }
+
+            let result = elmts[0].replace(/ /g, "%20");
+            console.log(result);
+            getMRatingAPI(result);
+
         } else if (this.value == 332) {
             let select = document.getElementById('marvArray');
             select.innerHTML = '';
@@ -115,6 +149,10 @@ $(marvelName).change(function() {
             select.appendChild(el);
             console.log(el.value);
         }
+            let result = elmts[0].replace(/ /g, "%20");
+            console.log(result);
+            getMRatingAPI(result);
+
         } else if (this.value == 687) {
             let select = document.getElementById('marvArray');
             select.innerHTML = '';
@@ -127,6 +165,10 @@ $(marvelName).change(function() {
             select.appendChild(el);
             console.log(el.value);
         }
+            let result = elmts[0].replace(/ /g, "%20");
+            console.log(result);
+            getMRatingAPI(result);
+
         } else if (this.value == 213) {
             let select = document.getElementById('marvArray');
             select.innerHTML = '';
@@ -139,10 +181,18 @@ $(marvelName).change(function() {
             select.appendChild(el);
             console.log(el.value);
         }
+            let result = elmts[0].replace(/ /g, "%20");
+            console.log(result);
+            getMRatingAPI(result);
         };
         getMarvelAPI(idURL);
-        getMRatingAPI(el.value);
 });
+$(movieChoice).change(function() {
+    console.log(this.value);
+    let result = this.value.replace(/ /g, "%20");
+            console.log(result);
+            getMRatingAPI(result);
+})
 
 $(dcName).change(function() {
     let position = this.value;
@@ -161,6 +211,10 @@ $(dcName).change(function() {
         select.appendChild(el);
         console.log(el.value);
     }
+        let dcresult = elmts[0].replace(/ /g, "%20");
+        console.log(dcresult);
+        getDCRatingAPI(dcresult);
+
     } else if (this.value == 644) {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
@@ -174,6 +228,10 @@ $(dcName).change(function() {
         select.appendChild(el);
         console.log(el.value);
     }
+        let dcresult = elmts[0].replace(/ /g, "%20");
+        console.log(dcresult);
+        getDCRatingAPI(dcresult);
+
     } else if (this.value == 306) {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
@@ -187,6 +245,10 @@ $(dcName).change(function() {
         select.appendChild(el);
         console.log(el.value);
     }
+        let dcresult = elmts[0].replace(/ /g, "%20");
+        console.log(dcresult);
+        getDCRatingAPI(dcresult);
+
     } else if (this.value == 720) {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
@@ -200,6 +262,10 @@ $(dcName).change(function() {
         select.appendChild(el);
         console.log(el.value);
     }
+        let dcresult = elmts[0].replace(/ /g, "%20");
+        console.log(dcresult);
+        getDCRatingAPI(dcresult);
+
     } else if (this.value == 194) {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
@@ -213,6 +279,10 @@ $(dcName).change(function() {
         select.appendChild(el);
         console.log(el.value);
     }
+        let dcresult = elmts[0].replace(/ /g, "%20");
+        console.log(dcresult);
+        getDCRatingAPI(dcresult);
+
     } else if (this.value == 370) {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
@@ -226,6 +296,10 @@ $(dcName).change(function() {
         select.appendChild(el);
         console.log(el.value);
     }
+        let dcresult = elmts[0].replace(/ /g, "%20");
+        console.log(dcresult);
+        getDCRatingAPI(dcresult);
+
     } else if (this.value == 309) {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
@@ -239,6 +313,10 @@ $(dcName).change(function() {
         select.appendChild(el);
         console.log(el.value);
     }
+        let dcresult = elmts[0].replace(/ /g, "%20");
+        console.log(dcresult);
+        getDCRatingAPI(dcresult);
+
     } else if (this.value == 367) {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
@@ -252,6 +330,10 @@ $(dcName).change(function() {
         select.appendChild(el);
         console.log(el.value);
     }
+        let dcresult = elmts[0].replace(/ /g, "%20");
+        console.log(dcresult);
+        getDCRatingAPI(dcresult);
+
     } else if (this.value == 165) {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
@@ -265,6 +347,10 @@ $(dcName).change(function() {
         select.appendChild(el);
         console.log(el.value);
     }
+        let dcresult = elmts[0].replace(/ /g, "%20");
+        console.log(dcresult);
+        getDCRatingAPI(dcresult);
+
     } else if (this.value == 38) {
         // clearMarvMovie();
         let select = document.getElementById('dcArray');
@@ -278,10 +364,19 @@ $(dcName).change(function() {
         select.appendChild(el);
         console.log(el.value);
     }
+        let dcresult = elmts[0].replace(/ /g, "%20");
+        console.log(dcresult);
+        getDCRatingAPI(dcresult);
     };
 
     getDCAPI(idURL);
 });
+$(dcmovieChoice).change(function() {
+    console.log(this.value);
+    let dcresult = this.value.replace(/ /g, "%20");
+            console.log(dcresult);
+            getDCRatingAPI(dcresult);
+})
 
 function getMarvelAPI(link) {
     fetch(link)
@@ -329,9 +424,39 @@ function getMarvelAPI(link) {
        }
        var avg = sum/mstatTot.length;
        console.log( "The sum of all the elements is: " + sum + " The average is: " + avg );
+
+
+       var allSelectedChars = [];
+       if (localStorage.getItem('marvSelectedChars')){
+        allSelectedChars = JSON.parse(localStorage.getItem('marvSelectedChars'))
+       }  
+       if (allSelectedChars.length === 3) {
+           allSelectedChars.shift();
+       }
+       allSelectedChars.push(marvTitle.textContent)
+       localStorage.setItem("marvSelectedChars", JSON.stringify(allSelectedChars));
+       var allSelectedStats = [];
+       if (localStorage.getItem('marvSelectedStats')) {
+           allSelectedStats = JSON.parse(localStorage.getItem('marvSelectedStats'))
+       }
+       if (allSelectedStats.length === 3) {
+           allSelectedStats.shift();
+       }
+       allSelectedStats.push(avg);
+       localStorage.setItem('marvSelectedStats', JSON.stringify(allSelectedStats));
+       for (var x = 0; x < allSelectedChars.length; x++) {
+           var nameDisplay = allSelectedChars[x];
+           var mStored = document.createElement('p');
+           mStored.textContent = nameDisplay;
+           mStored.setAttribute('style', 'color:red')
+           teamMarvel.append(mStored);
+       }
     })
     marvCharTitle.innerHTML = "";
-    marvStats.innerHTML = "";   
+    marvStats.innerHTML = "";
+    teamMarvel.innerHTML = "";
+
+    
 }
 function getDCAPI(link) {
     fetch(link)
@@ -381,11 +506,86 @@ function getDCAPI(link) {
         var avg = sum/dstatTot.length;
         console.log( "The sum of all the elements is: " + sum + " The average is: " + avg );
 
+        var allSelectedChars = [];
+       if (localStorage.getItem('dcSelectedChars')){
+        allSelectedChars = JSON.parse(localStorage.getItem('dcSelectedChars'))
+       }  
+       if (allSelectedChars.length === 3) {
+           allSelectedChars.shift();
+       }
+       allSelectedChars.push(dcTitle.textContent)
+       localStorage.setItem("dcSelectedChars", JSON.stringify(allSelectedChars));
+       var allSelectedStats = [];
+       if (localStorage.getItem('dcSelectedStats')) {
+           allSelectedStats = JSON.parse(localStorage.getItem('dcSelectedStats'))
+       }
+       if (allSelectedStats.length === 3) {
+           allSelectedStats.shift();
+       }
+       allSelectedStats.push(avg);
+       localStorage.setItem('dcSelectedStats', JSON.stringify(allSelectedStats));
+       for (var x = 0; x < allSelectedChars.length; x++) {
+           var nameDisplay = allSelectedChars[x];
+           var dcStored = document.createElement('p');
+           dcStored.textContent = nameDisplay;
+           dcStored.setAttribute('style', 'color:black')
+           teamDC.append(dcStored);
+       } 
+
     })
 
     dcCharTitle.innerHTML = "";
-    dcStats.innerHTML = "";           
+    dcStats.innerHTML = "";
+    teamDC.innerHTML = "";
 }
 
 //Getting movie ratings
-// function getMRatingAPI(marvMovie);
+function getMRatingAPI(marvMovie) {
+    fetch('https://imdb-api.com/en/API/SearchMovie/k_8h1t7ggm/' + marvMovie)
+    .then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                var pull1 = data.results[0];
+                var idName = pull1.id;
+                console.log(idName);
+                
+                fetch('https://imdb-api.com/en/API/Ratings/k_8h1t7ggm/' + idName)
+                .then(function (response) {
+                    console.log(response)
+                    if (response.ok) {
+                        response.json().then(function (data) {
+                            var pull2 = data.rottenTomatoes;
+                            console.log(pull2);
+                        })
+                    }
+                })
+            })
+        }
+    })
+}
+
+function getDCRatingAPI(dcMovie) {
+    fetch('https://imdb-api.com/en/API/SearchMovie/k_8h1t7ggm/' + dcMovie)
+    .then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                var dcpull1 = data.results[0];
+                var dcidName = dcpull1.id;
+                console.log(dcidName);
+                
+                fetch('https://imdb-api.com/en/API/Ratings/k_8h1t7ggm/' + dcidName)
+                .then(function (response) {
+                    console.log(response)
+                    if (response.ok) {
+                        response.json().then(function (data) {
+                            var dcpull2 = data.rottenTomatoes;
+                            console.log(dcpull2);
+                        })
+                    }
+                })
+            })
+        }
+    })
+}
+
+
