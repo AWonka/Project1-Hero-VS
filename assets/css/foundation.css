@@ -17,6 +17,7 @@ html {
   -webkit-text-size-adjust: 100%; }
 
 body {
+  background: url(Background.png);
   margin: 0; }
 
 h1 {
@@ -188,13 +189,13 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: #fefefe;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  background: linear-gradient(to right, rgb(136, 45, 45),rgb(78, 24, 24),rgb(51, 51, 51), rgb(0, 0, 0));
+  /* font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;*/}
 
 img {
   display: inline-block;
@@ -2183,6 +2184,7 @@ td {
 p {
   margin-bottom: 1rem;
   font-size: inherit;
+  font-family: 'Bangers', cursive;
   line-height: 1.6;
   text-rendering: optimizeLegibility; }
 
@@ -2200,7 +2202,7 @@ small {
   font-size: 80%;
   line-height: inherit; }
 
-h1, .h1,
+/* h1, .h1,
 h2, .h2,
 h3, .h3,
 h4, .h4,
@@ -2254,17 +2256,19 @@ h6, .h6 {
   font-size: 1rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem; } */
 
 @media print, screen and (min-width: 40em) {
   h1, .h1 {
     font-size: 3rem; }
   h2, .h2 {
-    font-size: 2.5rem; }
+    font-size: 2.5rem;
+    font-family: 'Bangers', cursive; }
   h3, .h3 {
     font-size: 1.9375rem; }
   h4, .h4 {
-    font-size: 1.5625rem; }
+    font-size: 1.5625rem;
+    font-family: 'Bangers', cursive; }
   h5, .h5 {
     font-size: 1.25rem; }
   h6, .h6 {
@@ -2272,11 +2276,12 @@ h6, .h6 {
 
 a {
   line-height: inherit;
-  color: #1779ba;
+  color: white;
   text-decoration: none;
+  font-family: 'Bangers', cursive;
   cursor: pointer; }
   a:hover, a:focus {
-    color: #1468a0; }
+    color: rgb(212, 206, 206) }
   a img {
     border: 0; }
 
@@ -2874,8 +2879,8 @@ select {
           appearance: none;
   border: 1px solid #cacaca;
   border-radius: 0;
-  background-color: #fefefe;
-  font-family: inherit;
+  background-color: linear-gradient(to right, rgb(51, 51, 51), rgb(0, 0, 0));
+  font-family: 'Bangers', cursive;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
@@ -3352,9 +3357,9 @@ select {
           flex-grow: 1;
   margin-bottom: 1rem;
   border: 1px solid #e6e6e6;
-  border-radius: 0;
-  background: #fefefe;
-  -webkit-box-shadow: none;
+  border-radius: 10px;
+  background: #797474;
+  -webkit-box-shadow: 0 10px 0 rgba(#808080);
           box-shadow: none;
   overflow: hidden;
   color: #0a0a0a; }
