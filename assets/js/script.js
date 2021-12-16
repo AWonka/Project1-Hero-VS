@@ -536,7 +536,7 @@ function getDCAPI(link) {
            var nameDisplay = allSelectedChars[x];
            var dcStored = document.createElement('p');
            dcStored.textContent = nameDisplay;
-           dcStored.setAttribute('style', 'color:black')
+           dcStored.setAttribute('style', 'color:blue')
            teamDC.append(dcStored);
        } 
 
