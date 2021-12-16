@@ -1,40 +1,18 @@
 # Project-One: Marvel vs DC
 
-This assignment had the following acceptance criteria. This README will show how each of these criteria was met.
+**Breif:**
 
-![](assets/images/ProjectRequirements.jpg)
+The application allows the end user to select three Marvel and DC characters. Once three for each franchise has been selected, then the "Team Fight!" button can be clikced. Once the button is clicked the application will average the powerstats for the selected characters as well as the selected movie's IMDb rating to produce an overall average. This avarege conmpares the Marvel selctions to the DC selections to determine a winner. 
 
-**Requirement One: “Use CSS framework other than Bootstrap.”**
-
-The below image shows that we used the Foundation CSS framework to help setup our CSS code quickly. 
-![](assets/images/CSSframeworkFoundation.jpg)
+The character selections relies on the superhero API to pull the powerstats and the movie selection relies on the IMDb titles API as well as the ratings API to get the RottenTomatoes and MetaCritic ratings. 
 
 
-**Requirement Two: “Be deployed to GitHub Pages.**
+![](./assets/images/Screen Shot 2021-12-16 at 5.03.06 PM.jpg)
 
+![](./assets/images/Screen Shot 2021-12-16 at 5.03.31 PM.jpg)
 
-**Requirement Three: “Be interactive.”**
+![](./assets/images/Screen Shot 2021-12-16 at 5.03.55 PM.jpg)
 
-
-**Requirement Four: “Use at least two server-side APIs.”**
-
-
-**Requirement Five: “Does not use alerts, confirms, or prompts.”**
-
-
-**Requirement Six: “Use client-side storage to store persistent data.”**
-
-
-**Requirement Seven: “Be responsive.”**
-
-
-**Requirement Eight: “Have a polished UI.”**
-
-
-**Requirement Nine: “have a clean repository that meets quality coding standards.”**
-
-
-**Requirement Ten: “Have a quality README.”**
 
 **Links:**
 
