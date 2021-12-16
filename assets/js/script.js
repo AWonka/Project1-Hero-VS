@@ -16,8 +16,8 @@ var teamDC = document.querySelector('#dcTeamNames');
 
 var parsed = "";
 const superAPIKey = '10215957904298742';
-const imdbAPIKey = 'k_rl11t9z7';
-var newKey = 'k_rjtma7sz/'
+const newKey = 'k_rjtma7sz/';
+var imdbAPIKey = 'k_rjtma7sz/'
 
 $(marvelName).change(function() {
     let position = this.value;
@@ -427,7 +427,7 @@ function getMarvelAPI(link) {
        for( var i = 0; i < mstatTot.length; i++ ){
            mSum += parseInt( mstatTot[i], 10 );
        }
-       var mAvg = mSum/mstatTot.length;
+       var mAvg = Math.round(mSum/mstatTot.length);
        console.log( "The sum of all the elements is: " + mSum + " The average is: " + mAvg );
 
 
@@ -511,7 +511,7 @@ function getDCAPI(link) {
             dcSum += parseInt( dstatTot[i], 10 );
         }
     
-        var dcAvg = dcSum/dstatTot.length;
+        var dcAvg = Math.round(dcSum/dstatTot.length);
         console.log( "The sum of all the elements is: " + dcSum + " The average is: " + dcAvg );
 
         var allSelectedChars = [];
@@ -545,6 +545,7 @@ function getDCAPI(link) {
     dcCharTitle.innerHTML = "";
     dcStats.innerHTML = "";
     teamDC.innerHTML = "";
+    console.log(totalDCStatArray)
 }
 
 //Getting movie ratings
@@ -562,9 +563,9 @@ function getMRatingAPI(marvMovie) {
                     if (response.ok) {
                         response.json().then(function (data) {
                             if (data.rottenTomatoes) {
-                                var mrating = data.rottenTomatoes
+                                var mrating = parseInt(data.rottenTomatoes)
                             }else {
-                                var mrating = data.metacritic
+                                var mrating = parseInt(data.metacritic)
                             }
                             console.log(mrating);
 
@@ -599,14 +600,14 @@ function getDCRatingAPI(dcMovie) {
                     if (response.ok) {
                         response.json().then(function (data) {
                             if (data.rottenTomatoes) {
-                                var dcrating = data.rottenTomatoes
+                                var dcrating = parseInt(data.rottenTomatoes)
                             }else {
-                                var dcrating = data.metacritic
+                                var dcrating = parseInt(data.metacritic)
                             }
                             console.log(dcrating);
 
                             var dcRateArray = [];
-                            if (localStorage.getItem('dcelectedRatings')) {
+                            if (localStorage.getItem('dcSelectedRatings')) {
                              dcRateArray = JSON.parse(localStorage.getItem('dcSelectedRatings'))
                             }  
                             if (dcRateArray.length === 3) {
@@ -622,4 +623,35 @@ function getDCRatingAPI(dcMovie) {
     })
 }
 
+var getmAvg = JSON.parse(localStorage.getItem('marvSelectedStats'))
+console.log(getmAvg);
+var getmRate = JSON.parse(localStorage.getItem('marvSelectedRatings'))
+console.log(getmRate)
 
+var i, j;
+var mAverage = 0;
+
+for(i = 0; i < getmAvg.length; i++){
+    mAverage += getmAvg[i];
+}
+for(j = 0; j < getmRate.length; j++){ // (two arrays for flexibility.)
+    mAverage += getmRate[j];
+}
+console.log(mAverage /= (i+j))
+
+
+var getdcAvg = JSON.parse(localStorage.getItem('dcSelectedStats'))
+console.log(getdcAvg);
+var getdcRate = JSON.parse(localStorage.getItem('dcSelectedRatings'))
+console.log(getdcRate)
+
+var i, j;
+var dcAverage = 0;
+
+for(i = 0; i < getdcAvg.length; i++){
+    dcAverage += getdcAvg[i];
+}
+for(j = 0; j < getdcRate.length; j++){ // (two arrays for flexibility.)
+    dcAverage += getdcRate[j];
+}
+console.log(dcAverage /= (i+j))
