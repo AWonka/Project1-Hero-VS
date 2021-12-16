@@ -10,15 +10,15 @@
 </head>
 <body>
     <div class="grid-x grid-margin-x medium-margin-collapse">
-        <div class="columns small-6">
-            <div class="align-center-middle text-center">
+        <div class="columns small-6" id="Marvel">
+            <div class="align-center-middle text-center" >
             <!--Everything within the left column will go here-->
-                <h1 class="teamTitle">Team Marvel</h1>
-                <div class="card">
-                    <h3 class="card-header text-uppercse">Choose Your Hero</h3>
-                    <div id="mTeamNames"></div>
+                <h1 class="teamTitle" id="Marvel">Team Marvel</h1>
+                <div class="card" >
+                    <h3 class="card-header text-uppercse" id="Marvel">Choose Your Hero</h3>
+                    <div id="mTeamNames"  ></div>
                     <select name="hero-name" id="marvelName">
-                        <option value="" disabled selected>Select Hero</option>
+                        <option value="" disabled selected ">Select Hero</option>
                         <option value="149">Captain America</option>
                         <option value="346">Iron Man</option>
                         <option value="620">Spider-Man</option>
@@ -32,9 +32,9 @@
                     </select>
                 </div>
             </div>
-            <div class="marvLogo"></div> <!--display is initially hidden, will shown through js-->
+            <div class="marvLogo" ></div> <!--display is initially hidden, will shown through js-->
             <!-- test -->
-            <div class="card marvCard" id="marvCardId">
+            <div class="card marvCard" id="marvCardId" >
                 <div class="card-divider" id="marvCharTitle"></div>
                 <div class="card-section" id="marvStats"></div>
             </div>
@@ -44,13 +44,14 @@
             </div>
             <div class="marvQuote"></div>
         </div>
-        <div class="columns small-6">
-            <div class="align-center-middle text-center">
-            <h1 class="teamTitle">Team  DC</h1>
-            <div class="card">
-                <h3 class="card-header text-uppercse">Choose Your Hero</h3>
+
+        <div class="columns small-6" id="dc">
+            <div class="align-center-middle text-center" >
+            <h1 class="teamTitle" id="dc">Team  DC</h1>
+            <div class="card" >
+                <h3 class="card-header text-uppercse" id="dc">Choose Your Hero</h3>
                 <div id="dcTeamNames"></div>
-                <select name="hero-name" id="dcName">
+                <select name="hero-name" id="dcName" id="DC">
                     <option value="" disabled selected>Select Hero</option>
                     <option value="69">Batman</option>
                     <option value="644">Superman</option>
@@ -67,17 +68,22 @@
             </div>
             <div class="dcLogo"></div> <!--display is initially hidden, will shown through js-->
             <!-- test -->
-            <div class="card dcCard" id="dcCardId">
-                <div class="card-divider" id="dcCharTitle"></div>    
-                <div class="card-section" id="dcStats"></div>
+            <div class="card dcCard" id="dcCardId" >
+                <div class="card-divider" id="dcCharTitle" ></div>    
+                <div class="card-section" id="dcStats" </div>
             </div>
             <!-- end test -->
-            <div class="dcMovie" id = "dcMovieDiv">
-                <select id = "dcArray"></select>
+            <div class="dcMovie" id = "dcMovieDiv" >
+                <select id = "dcArray" id="DC"></select>
             </div>
             <div class="dcQuote"></div>
             </div>
+
+            <div>
+                <canvas id="myChart"></canvas>
+            </div> 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src ="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/script.js"></script>

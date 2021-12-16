@@ -16,7 +16,7 @@ var teamDC = document.querySelector('#dcTeamNames');
 
 var parsed = "";
 const superAPIKey = '10215957904298742';
-const newKey = 'k_rjtma7sz/';
+const newKey = 'k_22ot0u2y/';
 var imdbAPIKey = 'k_rjtma7sz/'
 
 $(marvelName).change(function() {
@@ -548,6 +548,8 @@ function getDCAPI(link) {
     console.log(totalDCStatArray)
 }
 
+clear(myChart)
+
 //Getting movie ratings
 function getMRatingAPI(marvMovie) {
     fetch('https://imdb-api.com/en/API/SearchMovie/'+ newKey + marvMovie)
@@ -578,6 +580,35 @@ function getMRatingAPI(marvMovie) {
                             }
                             mRateArray.push(mrating)
                             localStorage.setItem("marvSelectedRatings", JSON.stringify(mRateArray));
+
+                            const labels = [
+                                'Marvel Powers',
+                                'Marvel Movie',
+                                'DC Powers',
+                                'DC Movie',
+                              ];
+                              const info = {
+                                labels: labels,
+                                datasets: [{
+                                  label: 'Marvel vs DC',
+                                  backgroundColor: 'rgb(255, 99, 132)',
+                                  borderColor: 'rgb(255, 99, 132)',
+                                  data: [mrating],
+                                }]
+                              };
+                            
+                              const config = {
+                                type: 'bar',
+                                data: data,
+                                options: {}
+                              };
+                            
+                              const myChart = new Chart(
+                                document.getElementById('myChart'),
+                                myChart.append(myChart),
+                                config
+                              );
+                              
                         })
                     }
                 })
@@ -585,6 +616,8 @@ function getMRatingAPI(marvMovie) {
         }
     })
 }
+
+
 
 function getDCRatingAPI(dcMovie) {
     fetch('https://imdb-api.com/en/API/SearchMovie/'+ newKey + dcMovie)
@@ -615,6 +648,33 @@ function getDCRatingAPI(dcMovie) {
                             }
                             dcRateArray.push(dcrating)
                             localStorage.setItem("dcSelectedRatings", JSON.stringify(dcRateArray));
+
+                            const labels = [
+                                'Marvel Powers',
+                                'Marvel Movie',
+                                'DC Powers',
+                                'DC Movie',
+                              ];
+                              const info = {
+                                labels: labels,
+                                datasets: [{
+                                  label: 'Marvel vs DC',
+                                  backgroundColor: 'rgb(255, 99, 132)',
+                                  borderColor: 'rgb(255, 99, 132)',
+                                  data: [dcrating],
+                                }]
+                              };
+                            
+                              const config = {
+                                type: 'bar',
+                                data: data,
+                                options: {}
+                              };
+                            
+                              const myChart = new Chart(
+                                document.getElementById('myChart'),
+                                config
+                              );
                         })
                     }
                 })
@@ -655,3 +715,6 @@ for(j = 0; j < getdcRate.length; j++){ // (two arrays for flexibility.)
     dcAverage += getdcRate[j];
 }
 console.log(dcAverage /= (i+j))
+
+
+  
