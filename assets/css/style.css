@@ -12,6 +12,11 @@
   src: url(DcFandom-orr4.ttf)
 }
 
+@font-face {
+  font-family: heroFont;
+  src: url(JmhsavageRegular-aZX5.ttf)
+}
+
 .mteamTitle {
   font-family: myFirstFont;
   font-size: 90px;
@@ -21,7 +26,7 @@
 #dc {
   background: linear-gradient(to right, rgb(51, 51, 51), rgb(0, 0, 0));
   font-weight: 700;
-  font-family: 'Bangers', cursive;
+  font-family: heroFont;
   color: white;
 }
 
@@ -49,9 +54,9 @@
 button {
   text-decoration: none;
   color: white;
-  font-family: 'Bangers', cursive;
+  font-family: heroFont;
   font-size: 20px;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black;
   font-weight: bold;
   padding: .5rem;
   width: 10rem;
@@ -73,14 +78,14 @@ body {
 #Marvel {
   background: linear-gradient(to right, rgb(136, 45, 45),rgb(78, 24, 24));
   font-weight: 700;
-  font-family: 'Bangers', cursive;
+  font-family: heroFont;
   color: white;
 }
 
 .dcName {
   background: linear-gradient(to right, rgb(51, 51, 51), rgb(0, 0, 0));
   font-weight: 700;
-  font-family: 'Bangers', cursive;
+  font-family: heroFont;
   color: white;
 }
 
@@ -102,15 +107,15 @@ body {
 
 .center {
   text-align: center;
-  font-family: 'Bangers', cursive;
+  font-family: heroFont;
   font-size: 20px;
   color: white;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black;
 }
 
 .whoWon {
   color: var(--gold);
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black;
 }
 
 .fightCloud {

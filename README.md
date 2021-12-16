@@ -6,12 +6,15 @@ The application allows the end user to select three Marvel and DC characters. On
 
 The character selections relies on the superhero API to pull the powerstats and the movie selection relies on the IMDb titles API as well as the ratings API to get the RottenTomatoes and MetaCritic ratings. 
 
+Homepage:
+![Home page](./assets/Homepage.png)
 
-![](./assets/images/Screen Shot 2021-12-16 at 5.03.06 PM.jpg)
+User selects a hero option:
+![Select](./assets/Select.png)
 
-![](./assets/images/Screen Shot 2021-12-16 at 5.03.31 PM.jpg)
+Display Winner:
+![Winner](./assets/Winners.png)
 
-![](./assets/images/Screen Shot 2021-12-16 at 5.03.55 PM.jpg)
 
 
 **Links:**
